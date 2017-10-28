@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file was created by Andrew Sun (youlosethegame@live.com)
+Last updated time: 2014-05-10 6:18 PM
+EzGPA compatibility: v3.1
+
+Be warned that no guarantees about the accuracy of this data is given.
+Feel free to modify this list as you see fit.
+
+Additional notes:
+To create "format strings", simply enclose the parameter number (starting from 1) in braces. 
+For instance, to get the value of the first parameter passed, use {1}.
+The {0} parameter is a reserved object and is used to link to other localized strings.
+For instance, to embed the value of <AppName> in another string, use {0:AppName}.
+This will not work if the linked string requires any parameters other than {0}.
+
+You may also perform switches (conditional lookups) on input objects.
+Simply define a <switch> element, with a "name" attribute that identifies the switch.
+You may have more than one switch, but be sure to name them all differently.
+
+In each switch table, define cases by creating <case> elements.
+The "key" attribute is used to determine the code path, and the value is the output value for that key.
+You may also define a <default> element that returns the value if the input does not match any case.
+If no default case is defined, an exception will be thrown instead.
+
+To use your switch table, append ":<switch table name here>" to the parameter name.
+For example, to pass object {1} to a switch table named "MyTable", use {1:MyTable}.
+If you define any switch tables, you must enclose the value in a <value> sub-element.
+Otherwise, you may simply nest the value in the localization element.
+-->
+
+<EzGPALocalization>
+    <locale id="en-US" name="English">
+        <AppName>EzGPA</AppName>
+        <Version>v{1}</Version>
+        <FullName>{0:AppName} v{1}</FullName>
+        <GradeName>Grade {1}</GradeName>
+        <CourseName>{1}</CourseName>
+        <GroupName>{1}</GroupName>
+        <LevelName>
+            <switch name="NameSelect">
+                <case key="High">高级/读写</case>
+                <case key="Med">中级/准中级</case>
+                <case key="Low">初级/入门</case>
+                <default>{1}</default>
+            </switch>
+            <value>{1:NameSelect}</value>
+        </LevelName>
+        <YourGpaIs>Your GPA is: {1}</YourGpaIs>
+        <EnterAllScores>Please enter all of your scores!</EnterAllScores>
+        <EnterValidScores>Score(s) invalid, please enter valid values!</EnterValidScores>
+        <CopyToClipboard>Copy to clipboard</CopyToClipboard>
+        <CopiedToClipboard>Copied to clipboard!</CopiedToClipboard>
+        <CopyFailed>Copy failed, try again?</CopyFailed>
+        <Options>Options</Options>
+        <About>About</About>
+        <Settings>Settings</Settings>
+        <AutoClear>Automatically clear scores</AutoClear>
+        <AutoCopy>Automatically copy GPA</AutoCopy>
+        <Language>Language</Language>
+        <Files>Files (reload to see changes)</Files>
+        <Info>Info</Info>
+        <Error>Error</Error>
+        <ResetSettingsMessage>
+            <line>Your settings file was created by an incompatible version of {0:AppName}.</line>
+            <line>In order to prevent conflicts, your settings have been reset.</line>
+        </ResetSettingsMessage>
+        <DataMissingMessage>Cannot find {1}, please place the file in the same directory as the executable.</DataMissingMessage>
+        <DataLoadFailedMessage>
+            <line>Failed to load {1}, please ensure that the file is not corrupt.</line>
+            <line />
+            <line>{2}</line>
+        </DataLoadFailedMessage>
+        <ConfigLoadFailedMessage>
+            <line>Config file is invalid! Do you want to restore default settings?</line>
+            <line />
+            <line>Click 'yes' to restore default settings. You will lose your saved data.</line>
+            <line />
+            <line>Click 'no' to exit without resetting so you can manually fix the config file.</line>
+            <line />
+            <line>{1}</line>
+        </ConfigLoadFailedMessage>
+        <AboutMessage>
+            <line>{0:AppName} v{1}</line>
+            <line>Copyright (c) 2011-2014 Andrew Sun &lt;youlosethegame@live.com&gt;</line>
+            <line />
+            <line>Changelog</line>
+            <line>{0:Changelog}</line>
+        </AboutMessage>
+        <Changelog>
+            <line>+ Now supports 11th grade IB class</line>
+        </Changelog>
+    </locale>
+    
+    <locale id="zh-CN" name="简体中文">
+        <AppName>EzGPA</AppName>
+        <Version>v{1}</Version>
+        <FullName>{0:AppName} v{1}</FullName>
+        <GradeName>{1}年级</GradeName>
+        <CourseName>
+            <switch name="NameSelect">
+                <case key="English">英语</case>
+                <case key="Chinese">汉语</case>
+                <case key="Math">数学</case>
+                <case key="Physics">物理</case>
+                <case key="Chemistry">化学</case>
+                <case key="History">历史</case>
+                <case key="Elective">选修</case>
+                <case key="Economics">经济</case>
+                <default>!!STR_NOT_FOUND!!</default>
+            </switch>
+            <value>{1:NameSelect}</value>
+        </CourseName>
+        <GroupName>
+            <switch name="NameSelect">
+                <case key="Native">母语</case>
+                <case key="Non-Native">非母语</case>
+                <default>{1}</default>
+            </switch>
+            <value>{1:NameSelect}</value>
+        </GroupName>
+        <LevelName>
+            <switch name="NameSelect">
+                <case key="High">高级/读写</case>
+                <case key="Med">中级/准中级</case>
+                <case key="Low">初级/入门</case>
+                <default>{1}</default>
+            </switch>
+            <value>{1:NameSelect}</value>
+        </LevelName>
+        <YourGpaIs>您的GPA是: {1}</YourGpaIs>
+        <EnterAllScores>请输入全部成绩！</EnterAllScores>
+        <EnterValidScores>成绩不合法，请重写！</EnterValidScores>
+        <CopyToClipboard>复制到剪切板</CopyToClipboard>
+        <CopiedToClipboard>复制成功！</CopiedToClipboard>
+        <CopyFailed>复制失败，请重试！</CopyFailed>
+        <Options>设置</Options>
+        <About>关于</About>
+        <Settings>设置</Settings>
+        <AutoClear>自动清空文本框</AutoClear>
+        <AutoCopy>自动复制GPA到剪切板</AutoCopy>
+        <Language>语言</Language>
+        <Files>手动修改（重启后生效）</Files>
+        <Info>提示</Info>
+        <Error>错误</Error>
+        <ResetSettingsMessage>此版本{0:AppName}不兼容您的配置文件。为了防止兼容性问题, 您的设置被还原到默认值。</ResetSettingsMessage>
+        <DataMissingMessage>找不到{1}，请确认文件跟exe文件放在同个文件夹里。</DataMissingMessage>
+        <DataLoadFailedMessage>
+            <line>加载{1}失败, 请确认文件没有损坏。</line>
+            <line />
+            <line>{2}</line>
+        </DataLoadFailedMessage>
+        <ConfigLoadFailedMessage>
+            <line>配置文件损坏！是否还原所有设置到默认值？</line>
+            <line />
+            <line>点击'是'将会还原您的设置到默认值。您会丢失所有保存的数据。</line>
+            <line />
+            <line>点击'否'将会退出程序。可以选择此选项，修复文件后重试。</line>
+            <line />
+            <line>{1}</line>
+        </ConfigLoadFailedMessage>
+        <AboutMessage>
+            <line>{0:AppName} v{1}</line>
+            <line>版权所有 (c) 2011-2014 Andrew Sun &lt;youlosethegame@live.com&gt;</line>
+            <line />
+            <line>更新日记</line>
+            <line>{0:Changelog}</line>
+        </AboutMessage>
+        <Changelog>
+            <line>+ 支持11年纪IB班</line>
+        </Changelog>
+    </locale>
+</EzGPALocalization>

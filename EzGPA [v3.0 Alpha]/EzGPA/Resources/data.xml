@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file was created by Andrew Sun (youlosethegame@live.com)
+Last updated time: 2014-04-26 9:17 PM
+EzGPA compatibility: v3.1
+
+Be warned that no guarantees about the accuracy of this data is given.
+Feel free to modify this list as you see fit.
+-->
+
+<EzGPAData>
+    <templates>
+        <levels>
+            <template name="English">
+                <group name="Native">
+                    <level name="H+" bonusgpa="0.4" />
+                    <level name="H" bonusgpa="0.3" />
+                </group>
+                <group name="Non-Native">
+                    <level name="S+" bonusgpa="0.15" />
+                    <level name="S" bonusgpa="0" />
+                </group>
+            </template>
+            <template name="Chinese">
+                <group name="Native">
+                    <level name="H" bonusgpa="0.4" />
+                    <level name="S" bonusgpa="0.3" />
+                </group>
+                <group name="Non-Native">
+                    <level name="High" bonusgpa="0.2" />
+                    <level name="Med" bonusgpa="0.1" />
+                    <level name="Low" bonusgpa="0" />
+                </group>
+            </template>
+            <template name="Default3">
+                <level name="H" bonusgpa="0.3" />
+                <level name="S+" bonusgpa="0.15" />
+                <level name="S" bonusgpa="0" />
+            </template>
+            <template name="Default2">
+                <level name="H" bonusgpa="0.3" />
+                <level name="S" bonusgpa="0" />
+            </template>
+            <template name="EnglishAP">
+                <group name="AP">
+                    <level name="AP" bonusgpa="0.5" />
+                </group>
+            </template>
+            <template name="ChineseAP">
+                <group name="AP">
+                    <level name="AP" bonusgpa="0.5" />
+                </group>
+            </template>
+            <template name="OtherAP">
+                <level name="AP" bonusgpa="0.5" />
+            </template>
+        </levels>
+        <scores>
+            <template name="Default" type="int" control="textbox">
+                <range lower="93" upper="100" basegpa="4.0" />
+                <range lower="88" upper="92" basegpa="3.7" />
+                <range lower="83" upper="87" basegpa="3.4" />
+                <range lower="78" upper="82" basegpa="3.1" />
+                <range lower="73" upper="77" basegpa="2.8" />
+                <range lower="68" upper="72" basegpa="2.5" />
+                <range lower="60" upper="67" basegpa="2.2" />
+                <range lower="0"  upper="59" basegpa="0.0" bonus="false" />
+            </template>
+            <template name="AFScale" type="string" control="combobox">
+                <item value="A" basegpa="4.0" />
+                <item value="B" basegpa="3.0" />
+                <item value="C" basegpa="2.0" />
+                <item value="D" basegpa="1.0" />
+                <item value="F" basegpa="0.0" />
+            </template>
+        </scores>
+    </templates>
+    <courses>
+        <grade id="2BA0F24C-2F22-4DE3-ADEE-F0085A670AA2" name="9">
+            <course name="Chinese"       scores="Default" levels="Chinese"  credits="4.5" />
+            <course name="English"       scores="Default" levels="English"  credits="7.5" />
+            <course name="Math"          scores="Default" levels="Default3" credits="7.0" />
+            <course name="Physics"       scores="Default" levels="Default3" credits="4.0" />
+            <course name="Chemistry"     scores="Default" levels="Default3" credits="3.0" />
+            <course name="History"       scores="Default" levels="Default3" credits="3.5" />
+            <multicourse name="Elective" scores="Default"                   credits="1.5">
+                <course name="IT" />
+                <course name="English Writing" />
+            </multicourse>
+        </grade>
+        <grade id="37223B6B-664E-4224-8828-0A09185A1C53" name="10">
+            <course name="Chinese"         scores="Default" levels="Chinese"  credits="3.5" />
+            <course name="English"         scores="Default" levels="English"  credits="7.5" />
+            <course name="Math"            scores="Default" levels="Default3" credits="7.0" />
+            <course name="Physics"         scores="Default" levels="Default3" credits="4.0" />
+            <course name="Chemistry"       scores="Default" levels="Default3" credits="4.0" />
+            <course name="Economics"       scores="Default" levels="Default2" credits="2.5" />
+            <multicourse name="Elective 1" scores="Default" levels="Default2" credits="2.5">
+                <course name="IT" />
+                <course name="Biology" />
+                <course name="History" />
+                <course name="Geography" />
+                <course name="Visual Art" />
+                <course name="Music" />
+            </multicourse>
+            <multicourse name="Elective 2" link="Elective 1" />
+        </grade>
+        <grade id="E14C11CC-4E28-4BBA-9FA5-29AD9B9E13D9" name="11">
+            <course name="Chinese"         scores="Default" levels="ChineseAP,Chinese" credits="3.0" />
+            <course name="English"         scores="Default" levels="EnglishAP,English" credits="6.0" />
+            <course name="Math"            scores="Default" levels="OtherAP,Default2"  credits="7.0" />
+            <course name="Physics"         scores="Default" levels="OtherAP,Default2"  credits="4.5" />
+            <course name="Chemistry"       scores="Default" levels="OtherAP,Default2"  credits="4.5" />
+            <multicourse name="Elective 1" scores="Default"                            credits="4.5">
+                <course name="AP Computer Science"          levels="OtherAP" />
+                <course name="AP Macroeconomics"            levels="OtherAP" />
+                <course name="AP Biology"                   levels="OtherAP" />
+                <course name="AP Geography"                 levels="OtherAP" />
+                <course name="AP World History"             levels="OtherAP" />
+                <course name="AP Environmental Science"     levels="OtherAP" />
+                <course name="AP Psychology"                levels="OtherAP" />
+                <course name="AP Studio Art"                levels="OtherAP" />
+                <course name="History"                      levels="None"    />
+                <course name="Rhetoric/Intensive English"   levels="None"    />
+            </multicourse>
+            <multicourse name="Elective 2" link="Elective 1" />
+        </grade>
+    </courses>
+</EzGPAData>
